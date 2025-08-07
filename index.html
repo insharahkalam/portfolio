@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insharah Kalam | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            padding: 0 70px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            color: #94a3b8;
+        }
+
+        .about,
+        .projects-section {
+            background: #1e293b;
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 50px;
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .about img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .about h2,
+        .projects-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            max-width: 800px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #0f172a;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            display: block;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 10px 20px 10px 20px;
+            background: #1e293b;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .card .tech {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #cbd5e1;
+        }
+
+        .card .links {
+            margin-top: 10px;
+        }
+
+        .card .links a {
+            color: #93c5fd;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+
+        .contact {
+            background: #1e293b;
+            padding: 40px;
+            border-radius: 16px;
+            /* margin-bottom: 30px; */
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            /* margin-bottom: 15px; */
+            flex: 1 1 100%;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+
+        .contact-info a {
+            color: #93c5fd;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-info i {
+            color: #38bdf8;
+            font-size: 1.2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            /* center horizontally */
+            align-items: center;
+            /* center vertically */
+            gap: 40px;
+            /* space between links */
+            flex-wrap: wrap;
+            /* wrap on small screens */
+            margin-bottom: 20px;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 40px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-links a i {
+            font-size: 20px;
+        }
+
+        .contact-links a:hover {
+            color: #a1a1a1;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 0.9rem;
+            color: #64748b;
+            border-top: 1px solid #334155;
+            padding: 20px;
+        }
+
+        footer nav {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Insharah Kalam</h1>
+        <p>Frontend Developer </p>
+    </header>
+
+
+    <section class="about">
+        <img src="./images/mypic.jpg" alt="Insharah Kalam" />
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>I’m Insharah Kalam, a passionate Frontend Developer with a strong grasp of HTML, CSS, JavaScript, and
+                modern tools like Supabase. I love building clean, responsive, and interactive user interfaces. My goal
+                is to craft delightful web experiences that solve real problems and look great on any device. Whether
+                it's turning a simple idea into a web app or solving tricky UI bugs, I enjoy the challenge and
+                creativity web development brings!</p>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <h2>My Projects</h2>
+        <div class="projects">
+
+            <div class="card">
+                <img src="./images/authentication.png" alt="Post App with Supabase">
+                <div class="card-content">
+                    <h3>Post Application</h3>
+                    <div class="tech">HTML, CSS, JS, Supabase</div>
+                    <p>User authentication and post system using Supabase backend with image uploads.</p>
+                    <div class="links">
+                        <a href="https://insharahkalam.github.io/supabase-auth-app/" target="_blank">Live</a>
+                        <a href="https://github.com/insharahkalam/supabase-auth-app" target="_blank">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/todo.png" alt="Todo App">
+                <div class="card-content">
+                    <h3>Todo App</h3>
+                    <div class="tech">HTML, CSS, JS</div>
+                    <p>Stay organized with this clean and minimal to-do app. Easily add, complete, and delete tasks.</p>
+                    <div class="links">
+                        <a href="https://insharahkalam.github.io/todo-app/" target="_blank">Live</a>
+                        <a href="https://github.com/insharahkalam/todo-app" target="_blank">Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/quiz.png" alt="Quiz App">
+                <div class="card-content">
+                    <h3>Quiz App</h3>
+                    <div class="tech">HTML, CSS, JS</div>
+                    <p>Sharpen your mind with this fun quiz app. Features random questions and score tracking.</p>
+
+                    <div class="links">
+                        <a href="https://quiz-application-by-me.netlify.app/" target="_blank">Live</a>
+                        <a href="https://github.com/insharahkalam/quiz-app" target="_blank">Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/calculator.png" alt="Calculator">
+                <div class="card-content">
+                    <h3>Calculator</h3>
+                    <div class="tech">HTML, CSS, JS</div>
+                    <p>Simple and elegant calculator supporting basic arithmetic operations.</p>
+                    <div class="links">
+                        <a href="https://using-js-calculator.netlify.app/" target="_blank">Live</a>
+                        <a href="https://github.com/insharahkalam/calculator" target="_blank">Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/stopwatch.png" alt="Stop Watch">
+                <div class="card-content">
+                    <h3>Stop Watch</h3>
+                    <div class="tech">HTML, CSS, JS</div>
+                    <p>A modern stopwatch with start, stop, and reset functionality, built from scratch.</p>
+                    <div class="links">
+                        <a href="https://making-stop-watch.netlify.app/" target="_blank">Live</a>
+                        <a href="https://github.com/insharahkalam/stop-watch" target="_blank">Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/pass generate.png" alt="Password Generator">
+                <div class="card-content">
+                    <h3>Password Generator</h3>
+                    <div class="tech">HTML, CSS, JS</div>
+                    <p>A tool to generate strong, random passwords with copy and customization options.</p>
+                    <div class="links">
+                        <a href="https://insharahkalam.github.io/password-generator/" target="_blank">Live</a>
+                        <a href="https://github.com/insharahkalam/password-generator" target="_blank">Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/grade check.png" alt="Grade Check">
+                <div class="card-content">
+                    <h3>Grade Check</h3>
+                    <div class="tech">HTML, CSS, JS</div>
+                    <p>A tool to calculate grades and percentages based on user input for results.</p>
+                    <div class="links">
+                        <a href="https://insharahkalam.github.io/grade-check/" target="_blank">Live</a>
+                        <a href="https://github.com/insharahkalam/grade-check" target="_blank">Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/ludo.png" alt="Ludo Dice Game">
+                <div class="card-content">
+                    <h3>Ludo Dice Game</h3>
+                    <div class="tech">HTML, CSS, JS</div>
+                    <p>Fun dice rolling game simulating Ludo's dice logic using random number generation.</p>
+                    <div class="links">
+                        <a href="https://insharahkalam.github.io/js-task/" target="_blank">Live</a>
+                        <a href="https://github.com/insharahkalam/js-task" target="_blank">Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/delizius.png" alt="Delizius">
+                <div class="card-content">
+                    <h3>Delizius</h3>
+                    <div class="tech">HTML, CSS, JS</div>
+                    <p>A responsive restaurant website with animated menu sections and interactive UI.</p>
+                    <div class="links">
+                        <a href="https://insharahkalam.github.io/delizius/" target="_blank">Live</a>
+                        <a href="https://github.com/insharahkalam/delizius" target="_blank">Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./images/ecommerce.png" alt="E-Commerce Website">
+                <div class="card-content">
+                    <h3>E-Commerce Website</h3>
+                    <div class="tech">HTML, CSS, JS</div>
+                    <p>Multi-product layout with add-to-cart, product listings, and sleek design interface.</p>
+                    <div class="links">
+                        <a href="https://insharahkalam.github.io/E-commercr-websites/" target="_blank">Live</a>
+                        <a href="https://github.com/insharahkalam/E-commercr-websites" target="_blank">Repo</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-links">
+            <a href="mailto:insharahdev47@gmail.com">
+                <i class="fas fa-envelope"></i>
+                insharahdev47@gmail.com
+            </a>
+            <a href="https://github.com/insharahkalam" target="_blank">
+                <i class="fab fa-github"></i>
+                github.com/insharahkalam
+            </a>
+            <a href="https://www.linkedin.com/in/insharahkalam" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                linkedin.com/in/insharahkalam
+            </a>
+        </div>
+    </section>
+
+
+
+    <footer>
+        &copy; 2025 Insharah Kalam. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
